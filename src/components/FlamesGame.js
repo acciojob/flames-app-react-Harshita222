@@ -4,7 +4,7 @@ const FlamesGame = () => {
   const [name1, setName1] = useState("");
   const [name2, setName2] = useState("");
   const[result,setResult] = useState('')
-  const calculateRelation=()=>{
+  const calculateRelationship=()=>{
     let modname1=name1.toLowerCase();
     let modname2=name2.toLowerCase();
     let relation=modname1.length+modname2.length;
@@ -38,6 +38,7 @@ const clearForm = ()=>{
         onChange={(e) => setName1(e.target.value)}
         placeholder="Enter name 1"
         data-testid="input1"
+        name="name1"
       />
       <input
         type="text"
@@ -45,8 +46,9 @@ const clearForm = ()=>{
         onChange={(e) => setName2(e.target.value)}
         placeholder="Enter name 2"
         data-testid="input2"
+        name="name2"
       />
-      <button onClick={calculateRelation}>calculate Relationship Future</button>
+      <button onClick={calculateRelationship} data-testid="calculate_relationship">calculate Relationship Future</button>
       <button onClick={clearForm} data-testid="clear">clear</button>
       <h3 data-testid="answer">{result}</h3>
       <h3>Marriage</h3>
